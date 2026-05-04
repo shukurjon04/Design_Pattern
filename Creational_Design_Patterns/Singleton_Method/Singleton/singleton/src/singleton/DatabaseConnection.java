@@ -32,9 +32,9 @@ public class DatabaseConnection {
         return databaseConnection;
     }
 
-    public void saveTransaction(String cardNumber,double amount, String status){
+    public void saveTransaction(String cardNumber, double amount, String status){
         String sql = """
-                insert into transaction(card_number,amount,status)
+                insert into tranzaction(card_number,amount,status)
                 values(?,?,?)
                 """;
 
@@ -54,7 +54,7 @@ public class DatabaseConnection {
     }
 
     public boolean existsTransaction(Long id){
-        String sql = "select count(*) from transaction where id = ?";
+        String sql = "select count(*) from tranzaction where id = ?";
         try(PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setLong(1,id);
             ResultSet resultSet = ps.executeQuery();
@@ -68,7 +68,7 @@ public class DatabaseConnection {
     }
 
     public void updateStatus(Long id,String status){
-        String sql = "update transaction set status = ? where id =?";
+        String sql = "update tranzaction set status = ? where id =?";
         try(PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1,status);
             ps.setLong(2,id);

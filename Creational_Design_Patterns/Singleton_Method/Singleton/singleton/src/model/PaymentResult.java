@@ -2,11 +2,11 @@ package model;
 
 public class PaymentResult {
     private boolean success;
-    private String TransactionId;
+    private Long TransactionId;
     private String message;
     private String errorCode;
 
-    public PaymentResult(boolean success, String transactionId, String message, String errorCode) {
+    public PaymentResult(boolean success, Long transactionId, String message, String errorCode) {
         this.success = success;
         TransactionId = transactionId;
         this.message = message;
@@ -24,11 +24,11 @@ public class PaymentResult {
         this.success = success;
     }
 
-    public String getTransactionId() {
+    public Long getTransactionId() {
         return TransactionId;
     }
 
-    public void setTransactionId(String transactionId) {
+    public void setTransactionId(Long transactionId) {
         TransactionId = transactionId;
     }
 

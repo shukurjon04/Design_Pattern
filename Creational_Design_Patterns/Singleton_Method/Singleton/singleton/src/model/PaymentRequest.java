@@ -1,13 +1,13 @@
 package model;
 
 public class PaymentRequest {
-    private String TransactionId;
+    private Long TransactionId;
     private String CardNumber;
     private double amount;
     private String currency;
     private String paymentType;
 
-    public PaymentRequest(String transactionId, String cardNumber, double amount, String currency, String paymentType) {
+    public PaymentRequest(Long transactionId, String cardNumber, double amount, String currency, String paymentType) {
         TransactionId = transactionId;
         CardNumber = cardNumber;
         this.amount = amount;
@@ -18,11 +18,11 @@ public class PaymentRequest {
     public PaymentRequest() {
     }
 
-    public String getTransactionId() {
+    public Long getTransactionId() {
         return TransactionId;
     }
 
-    public void setTransactionId(String transactionId) {
+    public void setTransactionId(Long transactionId) {
         TransactionId = transactionId;
     }
 
